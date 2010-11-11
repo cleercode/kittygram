@@ -19,20 +19,25 @@ def fetch_stream(num_pages, per_page)
                    .page(page) \
                    .per_page(per_page) \
                    .each do |r|
-      results << {
-                'url' => r.text.scan(/http:\/\/instagr.am\/p\/\S+\s*/).first,
-                'text' => r.text.split(/http:\/\/instagr.am\/p\/\S+\s*/).first,
-                'photo' => get_photo(r.text.scan(/http:\/\/instagr.am\/p\/\S+\s*/).first),
-                'avatar' => r.profile_image_url,
-                'user' => r.from_user
-                }
+                     
+      if r.geo != nil
+        results << {
+                  'url' => r.text.scan(/http:\/\/instagr.am\/p\/\S+\s*/).first,
+                  'text' => r.text.split(/http:\/\/instagr.am\/p\/\S+\s*/).first,
+                  'photo' => get_photo(r.text.scan(/http:\/\/instagr.am\/p\/\S+\s*/).first),
+                  'avatar' => r.profile_image_url,
+                  'user' => r.from_user,
+                  'geo' => r.geo
+                  }
+      end
     end
   end
+  puts results.inspect
   results
 end
 
 get '/index.html' do
-  @results = fetch_stream(1, 10)
+  @results = fetch_stream(5, 10)
   haml :index
 end
 
@@ -58,3 +63,4 @@ __END__
     %img{:src => r['avatar']}
     %p= r['user']
     %p= r['text']
+    %p= r['geo']
