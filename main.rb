@@ -50,6 +50,7 @@ __END__
   %head
     %title Instagramline
     %link(rel="stylesheet" href="http://yui.yahooapis.com/2.8.0r4/build/reset/reset-min.css")  
+    %link(rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans+Caption:regular,bold&subset=cyrillic")  
     %link(rel="stylesheet" href="style.css")
   %body
     %h1 Instagramline

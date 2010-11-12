@@ -1,38 +1,46 @@
 /* Color theme: http://kuler.adobe.com/#themeID/1095642 */
 
 body {
-  background: #191514;
-  color: #e50073;
-	font: 14px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  background: #eee;
+  color: #222;
+	font: 14px 'PT Sans Caption', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   padding: 20px;
+  text-shadow: #fff 0 2px 0;
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 72px;
   font-weight: bold;
   margin-bottom: 20px;
-  background: #e50073;
-  color: #191514;
-  padding: 10px;
+  text-align: center;
+  width: 612px;
+  margin: 0 auto;
+  text-transform: uppercase;
 }
 
 .result {
   width: 612px;
-  background: #4c2e2e;
+  margin: 0 auto;
   padding: 10px;
 }
 
 .info {
-  background: #191514;
   overflow: hidden;
-  padding: 10px;
+}
+
+.text {
+  font-size: 20px;
 }
 
 img.photo {
+  width: 612px;
+  height: 612px;
   margin-bottom: 10px;
 }
 
 img.avatar {
+  width: 48px;
+  height: 48px;
   float: left;
   margin-right: 10px;
 }
