@@ -49,6 +49,7 @@ __END__
 %html
   %head
     %title Instagram Timeline
+    =stylesheet_link_tag style
   %body
     %h1 Instagram
     #content= yield
