@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'twitter'
 require 'sinatra'
+require 'haml'
 require 'open-uri'
 require 'nokogiri'
 
@@ -32,7 +33,6 @@ def fetch_stream(num_pages, per_page)
       end
     end
   end
-  puts results.inspect
   results
 end
 
