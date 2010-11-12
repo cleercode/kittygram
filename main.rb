@@ -34,7 +34,7 @@ def fetch_stream(num_pages, per_page)
 end
 
 get '/index.html' do
-  @results = fetch_stream(5, 10)
+  @results = fetch_stream(1, 1)
   haml :index
 end
 
@@ -48,17 +48,20 @@ __END__
 !!!
 %html
   %head
-    %title Instagram Timeline
-    =stylesheet_link_tag style
+    %title Instagramline
+    %link(rel="stylesheet" href="http://yui.yahooapis.com/2.8.0r4/build/reset/reset-min.css")  
+    %link(rel="stylesheet" href="style.css")
   %body
-    %h1 Instagram
+    %h1 Instagramline
     #content= yield
 
 @@ index
 - @results.each do |r|
   .result[r]
-    %img{:src => r['photo']}
-    %img{:src => r['avatar']}
-    %p= r['user']
-    %p= r['text']
-    %p= r['geo']
+    %img.photo{:src => r['photo']}
+    .info
+      %img.avatar{:src => r['avatar']}
+      %ul.details
+        %li.user= r['user']
+        %li.text= r['text']
+        %li.geo= r['geo']
