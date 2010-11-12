@@ -18,6 +18,11 @@ h1 {
   text-transform: uppercase;
 }
 
+a {
+  color: #d88c00;
+  text-decoration: none;
+}
+
 .result {
   width: 612px;
   margin: 0 auto;
@@ -26,6 +31,11 @@ h1 {
 
 .info {
   overflow: hidden;
+}
+
+.details {
+  width: 554px;
+  float: left;
 }
 
 .text {
@@ -43,6 +53,11 @@ img.avatar {
   height: 48px;
   float: left;
   margin-right: 10px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #fff;
 }
 
 li.user {
