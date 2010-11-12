@@ -1,7 +1,7 @@
 require 'rubygems'
-require 'twitter'
 require 'sinatra'
 require 'haml'
+require 'twitter'
 require 'open-uri'
 require 'nokogiri'
 
