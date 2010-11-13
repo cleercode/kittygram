@@ -15,7 +15,7 @@ end
 def fetch_stream(num_pages, per_page)
   results = []
   (1..num_pages).each do |page|
-    Twitter::Search.new('http source:Instagram') \
+    Twitter::Search.new('cat OR kitten source:Instagram') \
                    .lang('en') \
                    .page(page) \
                    .per_page(per_page) \
@@ -78,7 +78,7 @@ def time_ago_in_words(from_time, to_time = Time.now, include_seconds = false, op
 end
 
 get '/index.html' do
-  @results = fetch_stream(1, 1)
+  @results = fetch_stream(1, 10)
   haml :index
 end
 
@@ -92,7 +92,7 @@ __END__
 !!!
 %html
   %head
-    %title Instagramline
+    %title Kittygram!
     %link{:src => "http://yui.yahooapis.com/2.8.0r4/build/reset/reset-min.css", :rel => "stylesheet"}
     %link{:src => "http://fonts.googleapis.com/css?family=PT+Sans+Caption:regular,bold&subset=cyrillic", :rel => "stylesheet"}
     %link{:src => "http://fonts.googleapis.com/css?family=Reenie+Beanie&subset=latin", :rel => "stylesheet"}
@@ -100,23 +100,27 @@ __END__
     %link(rel="stylesheet" href="http://yui.yahooapis.com/2.8.0r4/build/reset/reset-min.css")  
     %link(rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans+Caption:regular,bold&subset=cyrillic")  
     %link(rel="stylesheet" href="style.css")
+    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js", :type => "text/javascript"}
+    %script{:src => "jquery.cycle.min.js", :type => "text/javascript"}
+    %script{:src => "script.js", :type => "text/javascript"}
   %body
     #container
-      %h1 Instagramline
+      %h1 Kittygram!
       #content= yield
       #footer
-        %p Instagramline is powered by Sinatra, Heroku, Twitter, and Instagram.
+        %p Kittygram is powered by Sinatra, Heroku, Twitter, and Instagram.
 
 @@ index
-- @results.each do |r|
-  .result[r]
-    %a{:href => '/'}
-      %img.photo{:src => r['photo']}
-    .info
-      %a{:href => 'http://twitter.com/' + r['user']}
-        %img.avatar{:src => r['avatar']}
-      %ul.details
-        %li.user
-          %a{:href => 'http://twitter.com/' + r['user']}= '@' + r['user']
-        %li.text= r['text']
-        %li.time= r['time']
+%ul#results
+  - @results.each do |r|
+    %li.result[r]
+      %a{:href => '/'}
+        %img.photo{:src => r['photo']}
+      .info
+        %a{:href => 'http://twitter.com/' + r['user']}
+          %img.avatar{:src => r['avatar']}
+        %ul.details
+          %li.user
+            %a{:href => 'http://twitter.com/' + r['user']}= '@' + r['user']
+          %li.text= r['text']
+          %li.time= r['time']

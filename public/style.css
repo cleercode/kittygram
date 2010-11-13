@@ -107,20 +107,24 @@ a {
 }
 
 .details {
-  width: 400px;
+  width: 534px;
   float: left;
 }
 
 .text {
-  font: 30px/36px 'Reenie Beanie', Arial, Helvetica;
+  font: 30px 'Reenie Beanie', Arial, Helvetica;
+}
+
+.time {
+  display: none;
 }
 
 img.photo {
   width: 612px;
   height: 612px;
   margin-bottom: 10px;
-  -webkit-box-shadow: #0B0B0F 0px 1px 5px;
-  border: 1px solid #0B0B0F;
+  -webkit-box-shadow: #ccc 0px 1px 5px;
+  border: 1px solid #ccc;
 }
 
 img.avatar {
