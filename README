@@ -1,6 +1,7 @@
-Instagramline
+Kittygram
 =============
-A timeline of Instagram tweets implemented in Sinatra.
+Shows pictures of cats from Instagram.
+Built in Sinatra.
 
 Chris Lee
 cleer@cmu.edu
