@@ -1,3 +1,3 @@
 $(function() {
-  $('#results').cycle({fx: 'shuffle'});
+  $('#results').cycle({fx: 'fade'});
 });
