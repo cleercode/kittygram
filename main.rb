@@ -101,7 +101,7 @@ __END__
     %link(rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans+Caption:regular,bold&subset=cyrillic")  
     %link(rel="stylesheet" href="style.css")
     %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js", :type => "text/javascript"}
-    %script{:src => "jquery.cycle.min.js", :type => "text/javascript"}
+    %script{:src => "jquery.cycle.all.min.js", :type => "text/javascript"}
     %script{:src => "script.js", :type => "text/javascript"}
   %body
     #container

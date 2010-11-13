@@ -1,3 +1,3 @@
 $(function() {
-  $('#results').cycle({fx: 'fade'});
+  $('#results').cycle({fx: 'scrollLeft', delay: -4000, speed: 1500});
 });
