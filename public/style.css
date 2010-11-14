@@ -22,7 +22,7 @@ body {
 }
 
 #container {
-  width: 712px;
+  width: 812px;
   margin: 0 auto;
   position: relative;
 }
@@ -44,7 +44,7 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  width: 712px;
+  width: 812px;
   height: 100%;
   background: url('fade.png');
   z-index: 100;
@@ -66,7 +66,7 @@ a {
 
 .result {
   width: 612px;
-  padding: 0 50px;
+  padding: 0 100px;
 }
 
 .text {
