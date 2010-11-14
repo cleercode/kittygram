@@ -33,7 +33,7 @@ def fetch_stream(num_pages, per_page)
 end
 
 get '/index.html' do
-  @results = fetch_stream(1 , 10)
+  @results = fetch_stream(1, 10)
   haml :index
 end
 
@@ -50,9 +50,6 @@ __END__
     %title Kittygram!
     %link{:href => "http://yui.yahooapis.com/2.8.0r4/build/reset/reset-min.css", :rel => "stylesheet"}
     %link{:href => "style.css", :rel => "stylesheet"}
-    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js", :type => "text/javascript"}
-    %script{:src => "jquery.cycle.all.min.js", :type => "text/javascript"}
-    %script{:src => "script.js", :type => "text/javascript"}
   %body
     #container
       %h1 Kittygram!
@@ -65,6 +62,10 @@ __END__
           %br
           Built by
           %a{:href => 'http://chrsl.net'} Chris Lee
+      #fade
+    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js", :type => "text/javascript"}
+    %script{:src => "jquery.cycle.all.min.js", :type => "text/javascript"}
+    %script{:src => "script.js", :type => "text/javascript"}
 
 @@ index
 %ul#results

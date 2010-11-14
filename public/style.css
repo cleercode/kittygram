@@ -22,8 +22,9 @@ body {
 }
 
 #container {
-  width: 612px;
+  width: 712px;
   margin: 0 auto;
+  position: relative;
 }
 
 h1 {
@@ -39,6 +40,16 @@ a {
   text-decoration: none;
 }
 
+#fade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 712px;
+  height: 100%;
+  background: url('fade.png');
+  z-index: 100;
+}
+
 .info {
   width: 592px;
   padding: 10px;
@@ -51,6 +62,11 @@ a {
 .details {
   width: 534px;
   float: left;
+}
+
+.result {
+  width: 612px;
+  padding: 0 50px;
 }
 
 .text {
