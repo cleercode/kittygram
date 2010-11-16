@@ -15,7 +15,7 @@ end
 def fetch_stream(num_pages, per_page)
   results = []
   (1..num_pages).each do |page|
-    Twitter::Search.new('cat OR kitten source:Instagram') \
+    Twitter::Search.new('cat OR kitten -"not cat" source:Instagram') \
                    .lang('en') \
                    .page(page) \
                    .per_page(per_page) \
@@ -50,6 +50,20 @@ __END__
     %title Kittygram!
     %link{:href => "http://yui.yahooapis.com/2.8.0r4/build/reset/reset-min.css", :rel => "stylesheet"}
     %link{:href => "style.css", :rel => "stylesheet"}
+    :plain
+      <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-19583432-2']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+      </script>
   %body
     #container
       %h1 Kittygram!
