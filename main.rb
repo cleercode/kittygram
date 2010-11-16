@@ -49,6 +49,9 @@ __END__
 %html
   %head
     %title Kittygram!
+    %meta{:"http-equiv" => "Content-Type", :content => "text/html; charset=utf-8"} 
+    %meta{:name => "keywords", :content => "instagram instagr.am twitter tweet tweets cat cats"} 
+    %meta{:name => "description", :content => "Kittygram shows recent pictures of cats from around the world."}
     %link{:href => "http://yui.yahooapis.com/2.8.0r4/build/reset/reset-min.css", :rel => "stylesheet"}
     %link{:href => "style.css", :rel => "stylesheet"}
     :plain
