@@ -78,7 +78,7 @@ __END__
       %h1 Kittygram!
       #content= yield
       #footer
-        %a.twitter-share-button{"data-count" => "horizontal", "data-text" => "Kittygram: Cute cat photos live from Twitter.", "data-url" => "http://kittygram.heroku.com/", :"data-via" => "cleerview", :href => "http://twitter.com/share"} Tweet
+        %a.twitter-share-button{"data-count" => "horizontal", "data-text" => "Kittygram: Cute cat photos live from Twitter.", "data-url" => "http://kittygram.heroku.com", :"data-via" => "cleerview", :href => "http://twitter.com/share"} Tweet
         %iframe{:allowTransparency => "true", :frameborder => "0", :scrolling => "no", :src => "http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fkittygram.heroku.com%2F&layout=button_count&show_faces=true&width=110&action=like&colorscheme=light&height=21", :style => "border:none; overflow:hidden; width:110px; height:20px;"}
         %p
           Kittygram shows recent pictures of cats from around the world.
