@@ -32,13 +32,14 @@ def fetch_stream(num_pages, per_page)
   results
 end
 
-get '/index.html' do
+
+get '/' do
   @results = fetch_stream(1, 10)
   haml :index
 end
 
-get '/' do
-  redirect '/index.html'
+get '/index.html' do
+  redirect '/'
 end
 
 __END__
