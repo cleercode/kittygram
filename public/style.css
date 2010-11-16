@@ -22,7 +22,7 @@ body {
 }
 
 #container {
-  width: 812px;
+  width: 814px;
   margin: 0 auto;
   position: relative;
 }
@@ -40,14 +40,22 @@ a {
   text-decoration: none;
 }
 
-#fade {
+#fade_left, #fade_right {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 812px;
-  height: 830px;
-  background: url('fade.png');
+  width: 100px;
+  height: 100%;
   z-index: 100;
+}
+
+#fade_left {
+  left: 0;
+  background: url('fade_left.png');
+}
+
+#fade_right {
+  right: 0;
+  background: url('fade_right.png');
 }
 
 .info {

@@ -79,7 +79,7 @@ __END__
       #content= yield
       #footer
         %a.twitter-share-button{"data-count" => "horizontal", "data-text" => "Kittygram: Cute cat photos live from Twitter.", "data-url" => "http://kittygram.heroku.com", :"data-via" => "cleerview", :href => "http://twitter.com/share"} Tweet
-        %iframe{:allowTransparency => "true", :frameborder => "0", :scrolling => "no", :src => "http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fkittygram.heroku.com%2F&layout=button_count&show_faces=true&width=110&action=like&colorscheme=light&height=21", :style => "border:none; overflow:hidden; width:110px; height:20px;"}
+        %iframe{:allowTransparency => "true", :frameborder => "0", :scrolling => "no", :src => "http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fkittygram.heroku.com%2F&layout=button_count&show_faces=true&width=110&action=like&colorscheme=light&height=20", :style => "border:none; overflow:hidden; width:110px; height:20px;"}
         %p
           Kittygram shows recent pictures of cats from around the world.
           %br
@@ -87,7 +87,8 @@ __END__
           %br
           Built by
           %a{:href => 'http://chrsl.net'} Chris Lee
-      #fade
+      #fade_left
+      #fade_right
     %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js", :type => "text/javascript"}
     %script{:src => "jquery.cycle.all.min.js", :type => "text/javascript"}
     %script{:src => "http://platform.twitter.com/widgets.js", :type => "text/javascript"}
