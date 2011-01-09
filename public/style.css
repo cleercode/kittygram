@@ -16,7 +16,7 @@
 body {
   background: #eee;
   color: #222;
-  font: 14px 'QuicksandBold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font: 14px/1.5 'QuicksandBold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   padding: 20px;
   text-shadow: #fff 0 2px 0;
 }
@@ -29,6 +29,7 @@ body {
 
 h1 {
   font-size: 72px;
+  line-height: 1;
   font-weight: bold;
   margin-bottom: 10px;
   text-align: center;

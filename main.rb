@@ -6,12 +6,14 @@ require 'nokogiri'
 require 'net/http'
 require 'open-uri'
 require 'json'
+require 'dalli'
+CACHE = Dalli::Client.new
 
 # Given Instagram URL, return the image URL
 def get_photo(url)
   uri = URI.parse('http://instagr.am/api/v1/oembed/?url=' + url)
   response = Net::HTTP.get_response uri
-  if response.type == Net::HTTPOK
+  if response.class == Net::HTTPOK
     data = JSON.parse response.body
     return data['url']
   else
@@ -44,29 +46,7 @@ def fetch_stream(num_pages, per_page)
   results
 end
 
-def fetch_stream_a(num_pages, per_page)
-  results = []
-  search = Twitter::Search.new
-  (1..num_pages).each do |page|
-    Twitter::Search.new.q('cat OR kitten -"not cat" source:Instagram') \
-                   .lang('en') \
-                   .page(page) \
-                   .per_page(per_page) \
-                   .each do |r|
-      url = r.text.scan(/http:\/\/instagr.am\/p\/\S+\s*/).first
-      results << {
-                'url' => url,
-                'text' => r.text.split(/http:\/\/instagr.am\/p\/\S+\s*/).first.gsub('Just posted a photo', ''),
-                'photo' => get_photo(url),
-                'avatar' => r.profile_image_url,
-                'user' => r.from_user
-                }
-    end
-  end
-  results
-end
-
 get '/' do
-  @results = fetch_stream(1, 10)
+  @results = CACHE.fetch('cats') { fetch_stream(1, 10) }
   haml :index
 end
