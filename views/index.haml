@@ -3,9 +3,9 @@
     %li.result[r]
       %img.photo{:src => r['photo']}
       .info
-        %a{:href => 'http://twitter.com/' + r['user']}
+        %a{:href => 'http://twitter.com/' + r['user'], :target => '_blank'}
           %img.avatar{:src => r['avatar']}
         %ul.details
           %li.user
-            %a{:href => 'http://twitter.com/' + r['user']}= '@' + r['user']
+            %a{:href => 'http://twitter.com/' + r['user'], :target => '_blank'}= '@' + r['user']
           %li.text= r['text']

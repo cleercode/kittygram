@@ -47,6 +47,6 @@ def fetch_stream(num_pages, per_page)
 end
 
 get '/' do
-  @results = CACHE.fetch('cats', :expires_in => 900) { fetch_stream(1, 10) }
+  @results = CACHE.fetch('cats', 1) { fetch_stream(1, 10) }
   haml(:index, { :ugly => true })
 end
