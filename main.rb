@@ -48,5 +48,5 @@ end
 
 get '/' do
   @results = CACHE.fetch('cats') { fetch_stream(1, 10) }
-  haml :index
+  haml(:index, { :ugly => true })
 end
