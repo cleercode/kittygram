@@ -1,0 +1,11 @@
+%ul#results
+  - @results.each do |r|
+    %li.result[r]
+      %img.photo{:src => r['photo']}
+      .info
+        %a{:href => 'http://twitter.com/' + r['user']}
+          %img.avatar{:src => r['avatar']}
+        %ul.details
+          %li.user
+            %a{:href => 'http://twitter.com/' + r['user']}= '@' + r['user']
+          %li.text= r['text']
