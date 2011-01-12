@@ -39,28 +39,30 @@ $.fn.cycle.transitions.scrollHorz = function ($cont, $slides, opts) {
     
 };})(jQuery);
 
-// Activate the cycle
+
 $(function() {
-$('#results').cycle({
-	fx: 'scrollHorz',
-	fastOnEvent: 1500,
-	delay: -4000,
-	speed: 1500,
-	pause: 1,
-	timeout: 5000,
+
+	// Activate the cycle
+	$('#results').cycle({
+		fx: 'scrollHorz',
+		fastOnEvent: 1500,
+		delay: -4000,
+		speed: 1500,
+		pause: 1,
+		timeout: 5000,
+	});
+
+	// Support key navigation
+	$(document).keyup(function(e) {
+		var key_id = (window.event) ? event.keyCode : e.keyCode;
+		switch (key_id) {
+		case 39:
+			$('#results').cycle('next');
+			break;
+		case 37:
+			$('#results').cycle('prev');
+			break;
+		}
 	});
 });
-
-document.onkeyup = KeyCheck;
-function KeyCheck(e) {
-	
-	var KeyID = (window.event) ? event.keyCode : e.keyCode;
-	switch(KeyID) {
-	case 39: $('#results').cycle('next')
-	break;
-	case 37: $('#results').cycle('prev')
-	break;
-
-	} 
-}
 
