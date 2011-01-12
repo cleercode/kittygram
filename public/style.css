@@ -7,18 +7,24 @@
 }
 
 @font-face {
-  font-family: 'Reenie Beanie';
+  font-family: 'Just Another Hand';
   font-style: normal;
   font-weight: normal;
-  src: local('Reenie Beanie'), local('ReenieBeanie'), url('http://themes.googleusercontent.com/font?kit=ljpKc6CdXusL1cnGUSamX4jjx0o0jr6fNXxPgYh_a8Q') format('truetype');
+  src: local('Just Another Hand'), local('JustAnotherHand-Regular'), url('http://themes.googleusercontent.com/font?kit=fKV8XYuRNNagXr38eqbRf1IfqgZqv9KXZDd4_em_FKQ') format('truetype');
+}
+
+@font-face {
+  font-family: 'Sniglet';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Sniglet'), url('http://themes.googleusercontent.com/font?kit=1ZHjsYpklbehZSiZpN0bvi3USBnSvpkopQaUR-2r7iU') format('truetype');
 }
 
 body {
   background: #eee;
   color: #222;
-  font: 14px/1.5 'QuicksandBold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font: 14px/1.5 Calibri, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
   padding: 20px;
-  text-shadow: #fff 0 2px 0;
 }
 
 #container {
@@ -28,7 +34,7 @@ body {
 }
 
 h1 {
-  font-size: 72px;
+  font: 72px/1 'Sniglet', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   line-height: 1;
   font-weight: bold;
   margin-bottom: 10px;
@@ -79,7 +85,7 @@ a {
 }
 
 .text {
-  font: 30px 'Reenie Beanie', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font: 30px 'Just Another Hand', 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
 img.photo {
@@ -103,10 +109,11 @@ img.avatar {
 
 li.user {
   font-weight: bold;
+  margin-bottom: 5px;
 }
 
 #footer {
   margin-top: 20px;
-  font-size: 10px;
+  font-size: 11px;
   text-align: center;
 }
