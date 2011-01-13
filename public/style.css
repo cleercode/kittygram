@@ -109,3 +109,19 @@ li.user {
   font-size: 11px;
   text-align: center;
 }
+
+ul#share_buttons {
+  margin: 0 auto 10px;
+  overflow: hidden;
+  width: 125px;
+}
+
+ul#share_buttons li {
+  float: left;
+  height: 20px;
+}
+
+ul#share_buttons li#fb_button {
+  height: 18px;
+  margin: 1px 0 1px 10px;
+}
