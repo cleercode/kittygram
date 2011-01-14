@@ -48,7 +48,6 @@ $(function() {
 		fastOnEvent: 1500,
 		delay: -4000,
 		speed: 1500,
-		pause: 1,
 		timeout: 5000,
 	});
 
