@@ -11,7 +11,7 @@ CACHE = Dalli::Client.new
 
 # Given Instagram URL, return the image URL
 def get_photo(url)
-  uri = URI.parse('http://instagr.am/api/v1/oembed/?url=' + url)
+  uri = URI.parse(URI.encode('http://instagr.am/api/v1/oembed/?url=' + url))
   response = Net::HTTP.get_response uri
   if response.class == Net::HTTPOK
     data = JSON.parse response.body
