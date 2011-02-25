@@ -23,6 +23,7 @@ GEM
       rack (~> 1.1)
       tilt (~> 1.2)
     tilt (1.2.2)
+    yajl-ruby (0.7.8)
 
 PLATFORMS
   ruby
@@ -32,3 +33,4 @@ DEPENDENCIES
   haml
   instagram
   sinatra
+  yajl-ruby

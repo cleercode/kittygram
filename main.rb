@@ -3,6 +3,7 @@ require 'sinatra'
 require 'instagram'
 require 'haml'
 require 'dalli'
+require 'yajl'
 CACHE = Dalli::Client.new
 
 Instagram.configure do |config|
@@ -11,7 +12,7 @@ Instagram.configure do |config|
 end
 
 get '/' do
-  @results = Instagram.tag_recent_media('cat')
-  # @results = CACHE.fetch('cats', 900) { Instagram.tag_recent_media('cat') }
+  # @results = Instagram.tag_recent_media('cat')
+  @results = CACHE.fetch('cats', 900) { Instagram.tag_recent_media('cat') }
   haml(:index, { :ugly => true })
 end
