@@ -11,7 +11,7 @@ Instagram.configure do |config|
 end
 
 get '/' do
-  # @results = Instagram.tag_recent_media('cat')
-  @results = CACHE.fetch('cats', 900) { Instagram.tag_recent_media('cat') }
+  @results = Instagram.tag_recent_media('cat')
+  # @results = CACHE.fetch('cats', 900) { Instagram.tag_recent_media('cat') }
   haml(:index, { :ugly => true })
 end
