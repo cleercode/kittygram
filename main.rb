@@ -11,8 +11,13 @@ Instagram.configure do |config|
   config.client_secret = ENV['INSTAGRAM_SECRET']
 end
 
+def getPhotos
+  photos = Instagram.tag_recent_media('cat')
+  photos.find_all{ |photo| photo.filter != nil }.map { |photo| photo.images.low_resolution.url}
+end
+
 get '/' do
-  # @results = Instagram.tag_recent_media('cat')
-  @results = CACHE.fetch('cats', 900) { Instagram.tag_recent_media('cat') }
+  @results = Instagram.tag_recent_media('cat')
+  # @results = CACHE.fetch('cats', 900) { Instagram.tag_recent_media('cat') }
   haml(:index, { :ugly => true })
 end
