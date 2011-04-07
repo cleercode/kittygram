@@ -18,18 +18,18 @@
       %ul#results
         - @results.each do |r|
           %li.photo_wrapper
-            %img.photo{:style => 'background: url(' + r + ') center no-repeat;'}
-      #footer
-        %ul#share_buttons
-          %li#tw_button
-            %a.twitter-share-button{"data-count" => "none", "data-text" => "Kittygram: Instagram for cat lovers.", "data-url" => "http://kittygram.heroku.com", :"data-via" => "cleerview", :href => "http://twitter.com/share"} Tweet
-          %li#fb_button
-            <iframe src='http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fkittygram.heroku.com&amp;layout=button_count&amp;show_faces=false&amp;width=80&amp;action=like&amp;font&amp;colorscheme=light&amp;height=21' scrolling='no' frameborder='0' style='border:none; overflow:hidden; width:100px; height:21px;' allowTransparency='true'></iframe>
-        %p
-          Built by
-          %a{:href => 'http://chrsl.net'} Chris Lee
+            .photo{:style => 'background: url(' + r + ') center no-repeat;'}
       #fade_left
       #fade_right
+    #footer
+      %ul#share_buttons
+        %li#tw_button
+          %a.twitter-share-button{"data-count" => "none", "data-text" => "Kittygram: Instagram for cat lovers.", "data-url" => "http://kittygram.heroku.com", :"data-via" => "cleerview", :href => "http://twitter.com/share"} Tweet
+        %li#fb_button
+          <iframe src='http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fkittygram.heroku.com&amp;layout=button_count&amp;show_faces=false&amp;width=80&amp;action=like&amp;font&amp;colorscheme=light&amp;height=21' scrolling='no' frameborder='0' style='border:none; overflow:hidden; width:100px; height:21px;' allowTransparency='true'></iframe>
+      %p
+        Built by
+        %a{:href => 'http://chrsl.net'} Chris Lee
     %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js", :type => "text/javascript"}
     %script{:src => "script.js", :type => "text/javascript"}
     %script{:src => "http://platform.twitter.com/widgets.js", :type => "text/javascript"}
