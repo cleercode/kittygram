@@ -17,7 +17,7 @@ def getPhotos
 end
 
 get '/' do
-  @results = getPhotos()
-  # @results = CACHE.fetch('cats', 900) { Instagram.tag_recent_media('cat') }
+  # @results = getPhotos()
+  @results = CACHE.fetch('cats', 900) { Instagram.tag_recent_media('cat') }
   haml(:index, { :ugly => true })
 end
