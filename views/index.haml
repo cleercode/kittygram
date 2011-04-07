@@ -1,10 +1,4 @@
 %ul#results
   - @results.each do |r|
-    %li.result
-      %img.photo{:src => r.images.standard_resolution.url}
-      - if !r.caption.nil?
-        .info
-          %img.avatar{:src => r.caption.from.profile_picture}
-          %ul.details
-            %li.user= r.caption.from.username
-            %li.text= r.caption.text
+    %li.photo_wrapper
+      %img.photo{:style => 'background: url(' + result + ') center no-repeat;'}
