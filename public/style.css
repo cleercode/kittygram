@@ -22,7 +22,7 @@ html {
 }
 
 #fade_left, #fade_right {
-  background: url(../images/fade.png);
+  background: url(fade.png);
   position: absolute;
   bottom: 0;;
   width: 100px;
